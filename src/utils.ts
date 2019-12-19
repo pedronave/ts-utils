@@ -22,13 +22,31 @@ export function isUndefined(data: any): boolean {
  * @param data data to be compared to undefined or null
  * @returns {boolean}
  */
-export function isNullOrUndefined(data: any): boolean {
-  return data == undefined || data == undefined;
+export function isNothing(data: any): boolean {
+  return data === undefined || data === null;
 }
 
+/**
+ * Given an array, moves an element at index from to index to
+ * @param array array whose element is to be moved
+ * @param from index of the element to be moved
+ * @param to index for the element to be moved to
+ */
 export function moveArrayElement<T>(array: T[], from: number, to: number): T[] {
   const arrCopy = [...array];
   array.slice();
   arrCopy.splice(to, 0, arrCopy.splice(from, 1)[0]);
   return arrCopy;
+}
+
+/**
+ * Checks if a given data is an Object or not.
+ * Every value that is not a primitive is an Object, this includes functions and arrays.
+ * @param data data to be checked
+ */
+export function isObject(data: any): boolean {
+  if (data === null) {
+    return false;
+  }
+  return typeof data === 'function' || typeof data === 'object';
 }

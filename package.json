@@ -1,5 +1,5 @@
 {
-  "name": "ts-utils",
+  "name": "@pedronave/ts-utils",
   "version": "0.1.0",
   "description": "A library for useful typescript utility functions",
   "main": "lib/index.js",
